@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <h3><i class="fa fa-sign-in" aria-hidden="true"></i> Login</h3>
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <small class="text-danger">{{msg}}</small>
+      
+      <div class="form-group">
+        <label for="employeeId">Employee ID </label>
+        <input 
+        type="employeeId" 
+        class="form-control"
+        placeholder="Enter Employee Id"
+        id="employeeId"
+        name="employeeId" 
+        [(ngModel)] = "user.employeeId"
+        required
+        #employeeId="ngModel">
+      </div>
+      <small class="text-danger" [class.d-none]="employeeId.valid || employeeId.untouched">Employee Id is required</small>
+     
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input 
+        type="password" 
+        class="form-control"
+        placeholder="Enter password"
+        id="pwd"
+        name="password" 
+        [(ngModel)]="user.password" 
+        required 
+        #password="ngModel">
+      </div>
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+     
+      <div class="form-group">
+        <button 
+        [disabled]="loginform.invalid" 
+        class="btn btn-primary">Login</button>
+        <!-- <span  class="spinner-border spinner-border-sm mr-1"></span>Login</button> -->
+        <a routerLink="/register" class="btn btn-link">New User? Register Here</a>
+    </div>
+
+    </form>
+  </div>
+</div>
