@@ -1,3 +1,5 @@
+Application allows user to share them experience on course learning - Client
+
 # FormSubmit
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
